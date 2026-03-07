@@ -88,3 +88,10 @@ start-workers.sh
 Stop Spark manually:
 stop-workers.sh
 stop-master.sh
+
+## Git commands
+- git add .
+- git commit -m "message"
+- git push origin main
+  
+- git pull origin main
