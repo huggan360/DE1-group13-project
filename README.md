@@ -16,7 +16,7 @@
 
 ### Monday
 1. Upload the dataset to hdfs
-   '''
+   
    source ~/.bashrc
    ~/bin/start-cluster.sh
    jps
@@ -25,7 +25,7 @@
    hdfs dfs -put -f /mnt/data/reddit/* /project/reddit/raw/
    hdfs dfs -ls /project/reddit/raw
    hdfs dfs -du -h /project/reddit/raw
-   '''
+   
 
 2. test the cluster
    spark-submit --master spark://group13-master:7077 src/test_read.py
