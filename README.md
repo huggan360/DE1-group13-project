@@ -18,13 +18,12 @@
 1. Upload the dataset to hdfs
    
    source ~/.bashrc 
-   ~/bin/start-cluster.sh
-   jps
-   hdfs dfsadmin -report
-   hdfs dfs -mkdir -p /project/reddit/raw
-   hdfs dfs -put -f /mnt/data/reddit/* /project/reddit/raw/
-   hdfs dfs -ls /project/reddit/raw
-   hdfs dfs -du -h /project/reddit/raw
+   - ~/bin/start-cluster.sh
+
+   - hdfs dfs -mkdir -p /project/reddit/raw
+   - hdfs dfs -put -f /mnt/data/reddit/* /project/reddit/raw/
+   - hdfs dfs -ls /project/reddit/raw
+   - hdfs dfs -du -h /project/reddit/raw
    
 
 3. test the cluster
