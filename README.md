@@ -6,32 +6,29 @@
 - Set correct internal hostnames and /etc/hosts
 - Set up SSH from master to workers
 - Installed Java 11, Hadoop 3.4.1, Spark 3.5.1, Python, Jupyter
-- Configured HDFS and fixed NameNode binding issue
-- Verified HDFS is healthy with 3 live DataNodes
-- Installed and started Spark master/workers
-- Created GitHub repo: DE1-group13-project
+- Configured HDFS
+- Verified HDFS
+- Installed and started Spark master and workers
+- Created GitHub repo ( DE1-group13-project)
+- Downloaded the redit dataset
 - 
+
+
 ### Monday
-1. Verify cluster:
+1. Upload the dataset to hdfs
+   '''
+   source ~/.bashrc
+   ~/bin/start-cluster.sh
    jps
    hdfs dfsadmin -report
-   start-master.sh
-   start-workers.sh
-
-2. Go to repo
-   cd ~/DE1-group13-project
-
-3. Download dataset locally on master:
-   cd ~/datasets/reddit
-   wget -O corpus-webis-tldr-17.zip "https://zenodo.org/records/1043504/files/corpus-webis-tldr-17.zip?download=1"
-   unzip corpus-webis-tldr-17.zip
-
-4. Upload dataset to HDFS:
    hdfs dfs -mkdir -p /project/reddit/raw
-   hdfs dfs -put -f ~/datasets/reddit/* /project/reddit/raw/
+   hdfs dfs -put -f /mnt/data/reddit/* /project/reddit/raw/
+   hdfs dfs -ls /project/reddit/raw
+   hdfs dfs -du -h /project/reddit/raw
+   '''
 
-5. Start coding first Spark test:
-   src/test_read.py
+2. test the cluster
+   spark-submit --master spark://group13-master:7077 src/test_read.py
 
 ## Manual
 ### IMPORTANT PATHS
