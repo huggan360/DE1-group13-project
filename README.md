@@ -27,7 +27,7 @@
    
 
 3. test the cluster
-   spark-submit --master spark://group13-master:7077 src/test_read.py
+   - spark-submit --master spark://group13-master:7077 src/test_read.py
 
 ## Manual
 ### IMPORTANT PATHS
