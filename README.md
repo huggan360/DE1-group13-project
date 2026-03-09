@@ -6,30 +6,19 @@ Testing
 - Set correct internal hostnames and /etc/hosts
 - Set up SSH from master to workers
 - Installed Java 11, Hadoop 3.4.1, Spark 3.5.1, Python, Jupyter
-- Configured HDFS
-- Verified HDFS
+- Configured HDFS and Spark
 - Installed and started Spark master and workers
 - Created GitHub repo ( DE1-group13-project)
 - Downloaded the redit dataset
-- 
 
+##### Monday
+- Loaded half of the reddit dataset into HDFS
+- Sucessfully ran simple analysis on the raw dataset
+- Expanded the worker cores to 2 per worker
+- Converted data into parquet format
+- Sucessfully ran simple analysis on the parquet formated data
 
-### Monday
-1. Upload the dataset to hdfs
-   
-   source ~/.bashrc 
-   - ~/bin/start-cluster.sh
-
-   - hdfs dfs -mkdir -p /project/reddit/raw
-   - hdfs dfs -put -f /mnt/data/reddit/* /project/reddit/raw/
-   - hdfs dfs -ls /project/reddit/raw
-   - hdfs dfs -du -h /project/reddit/raw
-   
-
-3. test the cluster
-   - spark-submit --master spark://group13-master:7077 src/test_read.py
-
-## Manual
+## VM Manual
 ### IMPORTANT PATHS
 
 Repo:
@@ -42,7 +31,7 @@ Spark:
 ~/spark-3.5.1-bin-hadoop3
 
 Dataset local folder:
-~/datasets/reddit
+~/mnt/data/reddit
 
 Helper scripts:
 ~/bin/format-namenode.sh
